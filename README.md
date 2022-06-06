@@ -10,4 +10,4 @@ In this scenario, a central trusted authority distributes identities based on sp
 
 ## Table of contents:
 
-- [Chapter on outcome from DPKI academic research](#academic_research)
+- [Chapter on outcome from DPKI academic research](https://github.com/YanchWare/internship-dpki/blob/main/academic_research.md)
