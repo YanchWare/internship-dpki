@@ -1,6 +1,6 @@
 # Efficient Distributed Public Key Infrastructure (DPKI) for practical usage in Service Mesh security
 
-**temporary** *Alex Falzone, 2022*
+*Alex Falzone, 2022*
 
 ## Abstract:
 
@@ -10,4 +10,7 @@ In this scenario, a central trusted authority distributes identities based on sp
 
 ## Table of contents:
 
-- [Chapter on outcome from DPKI academic research](https://github.com/YanchWare/internship-dpki/blob/main/academic_research.md)
+- [Chapter on outcome from DPKI academic research](#academic_research)
+
+## References:
+
