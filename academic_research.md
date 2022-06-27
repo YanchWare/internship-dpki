@@ -34,14 +34,25 @@ The main purpose is to use the Ethereum [[10](#references)][[11](#references)][[
 ### References:
 
 [1] Enisa, "Operation Black Tulip: Certificate authorities lose authority". Available at: https://www.enisa.europa.eu/media/news-items/operation-black-tulip
+
 [2] PhilipHunter. Verisign attack highlights where the real risks and fears lie. Available at: https://www.sciencedirect.com/science/article/abs/pii/S1361372307700362
+
 [3] Axel M. Arnbak & Nico A. N. M. van Eijk1, Universiteit van Amsterdam, Faculty of Law, Institute for Information Law. "Certificate Authority Collapse". Available at: https://deliverypdf.ssrn.com/delivery.php?ID=224027017022099112069084027088097120034088085082033007113020119000022122104104024106005038115104046010035023070006102100028096121014024022061107112070016073091011087036049055088083120010002123002122006064105125125010000067084122084100073105009077103024
+
 [4] Mohsen Toorani, Christian Gehrmann. Department of Electrical and Information Technology Lund University, Sweden. "A Decentralized Dynamic PKI based on Blockchain". Available at: https://arxiv.org/pdf/2012.15351.pdf
+
 [5] B. Laurie, A. Langley, and E. Kasper, “RFC 6962: Certificate transparency,” Request for Comments. IETF, 2013.
+
 [6] Maofan Yin, Dahlia Malkhi, Michael K. Reiter, Guy Golan Gueta, Ittai Abraham. HotStuff: BFT Consensus with Linearity and Responsiveness. Available at: https://dl.acm.org/doi/pdf/10.1145/3293611.3331591.
+
 [7] Xu Hao; Long Yu; Liu Zhiqiang; Liu Zhen; Gu Dawu. "Dynamic Practical Byzantine Fault Tolerance". Available at: https://ieeexplore.ieee.org/document/8433150
+
 [8] Conner Fromknecht, Dragos Velicanu, Sophia Yakoubov. "A Decentralized Public Key Infrastructure with Identity Retention". November 11, 2014. Available at: https://eprint.iacr.org/2014/803.pdf
+
 [9] Alisha Gupta, Bhushan Chaudhary and Pratibha Dwivedi. "A Comprehensive Study on Namecoin". Available at: https://ww.easychair.org/publications/preprint_download/7cmv
+
 [10] https://ethereum.org/en/developers/docs/
+
 [11] Martin Valenta, Philipp Sandner. Comparison of Ethereum, Hyperledger Fabric and Corda. June 2017. Available at: http://www.smallake.kr/wp-content/uploads/2017/07/2017_Comparison-of-Ethereum-Hyperledger-Corda.pdf
+
 [12] Seoung Kyun Kim, Zane Ma, Joshua Mason, Andrew Miller, Micheal Bailey, Siddharth Murali. "Measuring Ethereum Network Peers. Available at: https://dl.acm.org/doi/pdf/10.1145/3278532.3278542
