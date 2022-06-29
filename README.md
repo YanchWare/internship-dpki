@@ -12,5 +12,7 @@ In this scenario, a central trusted authority distributes identities based on sp
 
 - [Chapter on outcome from DPKI academic research](./academic_research.md)
 
+- [Chapter on overview of Ethereum blockchain ](./overview_on_ethereum.md)
+
 
 
