@@ -72,4 +72,3 @@ Regarding the consensus on Ethereum, there is PoW, which is not very optimal for
 
 [6] https://vyper.readthedocs.io/en/stable/
 
-[7] 
