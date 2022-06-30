@@ -3,13 +3,14 @@
 
 ## Introduction:
 
-Ethereum is one of the biggest blockchains that is used in the world. The intent of it is to create alternative protocols for building decentralized applications. Is based on the *Ethereum Virtual Machine* (EVM) [[1](#references)]. The main innovation of this blockchain is the use of the *smart contract* [[2](#references)] and the use of it with the *DAPPs* (Decentralized Applications) [[3](#references)].
+Ethereum is one of the biggest blockchains that is used in the world. It's purpose is to create alternative protocols for building decentralized applications. It is based on the *Ethereum Virtual Machine* (EVM) [[1](#references)]. The main innovation of this blockchain is the use of the *smart contract* [[2](#references)] and the use of it with the *DAPPs* (Decentralized Applications) [[3](#references)].
 
 
 ## Why we chose Ethereum:
 We can say that we chose Ethereum blockchain mainly for the following reasons:
-- Smart contracts [[2](#references)] are the main idea of the Ethereum blockchain. Nick Szabo, a computer scientist in 1994, created the term and defined it as *"A smart contract is a computerized transaction protocol that executes the terms of a contract"* [[4](#references)]. He also proposed the metaphor of smart contracts intended as vending machines. With the right inputs, a certain output is guaranteed. 
-An important feature is that it is permissionless, anyone can write a smart contract (and call back another smart contract inside of it) and deploy it to the network. To do this last thing is necessary a programming language. The principal are Solidity[[5](#references)] and Viper[[6](#references)]. 
+- Smart contracts [[2](#references)] are the main ideas of the Ethereum blockchain. Nick Szabo, a computer scientist in 1994, created the term and defined it as *"A smart contract is a computerized transaction protocol that executes the terms of a contract"* [[4](#references)]. He also proposed the metaphor of smart contracts intended as vending machines. With the right inputs, a certain output is guaranteed. 
+An important feature is that it is permissionless, anyone can write a smart contract (and call back another smart contract inside of it) and deploy it to the network. The two main programming language for creating smart contract are Solidity[[5](#references)] and Viper[[6](#references)]. 
+
 Here is a simple example taken from [[2](#references)]. 
   
 ``` solidity
