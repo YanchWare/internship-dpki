@@ -10,8 +10,8 @@ A CSR is a message from an entity to a trusted authority of the PKI, which conta
 
 A certification request consists of three parts: 
 - certification request information. 
-- signature algorithm identifier.
-- digital signature on the certification request information.
+- a signature algorithm identifier.
+- a digital signature on the certification request information.
 
 
 If everything is correct, the trusted authority will sign the certification request and return an X.509 certificate. This certificate contains the public key of the entity, a serial number, a validity period, the signature algorithm, and other information. [[1](#references)]
