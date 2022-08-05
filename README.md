@@ -1,6 +1,6 @@
-# Efficient Distributed Public Key Infrastructure (DPKI) for practical usage in Service Mesh security
+# Efficient Distributed Public Key Infrastructure (DPKI) for practical usage in Service Mesh Security
 
-*Alex Falzone, 2022*
+@AlexFalzone, 2022
 
 ## Abstract:
 
@@ -12,7 +12,7 @@ In this scenario, a central trusted authority distributes identities based on sp
 
 - [Chapter on outcome from DPKI academic research](./academic_research.md)
 
-- [Chapter on overview of Ethereum blockchain ](./overview_on_ethereum.md)
+- [Chapter on overview of Ethereum blockchain](./overview_on_ethereum.md)
 
-
+- [Chapter on PKI/DPKI operations](./DPKI_operations.md)
 
