@@ -1,12 +1,6 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Strings.sol";
-
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -54,7 +48,7 @@ contract dpki is ERC721URIStorage
     }
 
     //publish a unique instance of ERC721 token
-    function mintNFT(address to, string memory tokenURI)  public returns (uint256)
+    function mintNFT(address to)  public returns (uint256)
     {
         _tokenIds.increment();
 
@@ -62,7 +56,6 @@ contract dpki is ERC721URIStorage
 
         //bind the token to the owner
         _safeMint(to, currentTokenId);
-        _setTokenURI(currentTokenId, tokenURI);
 
         return currentTokenId;
     }
@@ -70,14 +63,17 @@ contract dpki is ERC721URIStorage
     certificate[] _certificates;
     revokeList[] _revokeList;
 
-    function certificateSigningRequest(address owner, string memory tokenURI, bytes32 pub_key,
+
+    event returnCSR(address addr, uint256 tkn);
+    function certificateSigningRequest(address owner, bytes32 pub_key,
                                        string memory commonName, string memory organizationName, string memory locality, string memory state,    
                                        string memory emailAddress) external returns (uint256)
     {
-        uint256 tempTokenId = mintNFT(owner, tokenURI);
+        uint256 tempTokenId = mintNFT(owner);
 
         _certificates.push(certificate(owner, tempTokenId, pub_key, commonName, organizationName, locality, state, emailAddress));
 
+        emit returnCSR(msg.sender, tempTokenId);
         return tempTokenId;
     }
 
@@ -95,28 +91,32 @@ contract dpki is ERC721URIStorage
         }
     }
 
-    
+    event returnCertificateByTokenId(address addr, certificate certificateEvent);
     //check if there is a certificate associated with the tokenId
-    function getCertificateByTokenId(uint256 tokenIdParameter) public view returns (certificate memory)
+    function getCertificateByTokenId(uint256 tokenIdParameter) public returns (certificate memory)
     {
         for (uint i = 0; i < _certificates.length; i++)
         {
             if (_certificates[i].token == tokenIdParameter)
-            {
+            {   
+                emit returnCertificateByTokenId(msg.sender, _certificates[i]);
                 return _certificates[i];
             }
         }
         revert("certificate not found");
     }
 
+
+    event returnCertificateByCommonName(address addr, certificate certificateEvent);
     //check if there is a certificate associated with commonName
-    function getCertificateByCommonName(string memory commonName) public view returns (certificate memory)
+    function getCertificateByCommonName(string memory commonName) public returns (certificate memory)
     {
         for (uint i = 0; i < _certificates.length; i++)
         {      
             //here we use hash because the cost of gas is lower than the cost of string comparison
             if ( keccak256(abi.encodePacked(_certificates[i].commonName)) == keccak256(abi.encodePacked(commonName)))
             {
+                emit returnCertificateByCommonName(msg.sender, _certificates[i]);
                 return _certificates[i];
             }
         }

@@ -14,11 +14,27 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.web3j</groupId>
+      <artifactId>core</artifactId>
+      <version>4.8.7</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.web3j/infura -->
+    <dependency>
+      <groupId>org.web3j</groupId>
+      <artifactId>infura</artifactId>
+      <version>4.2.0</version>
+    </dependency>
+    <!-- <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>build-helper-maven-plugin</artifactId>
+      <version>3.3.0</version>
+    </dependency> -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -27,6 +43,7 @@
     </dependency>
   </dependencies>
 
+
   <build>
     <plugins>
       <plugin>
@@ -34,16 +51,34 @@
         <artifactId>web3j-maven-plugin</artifactId>
         <version>4.9.4</version>
         <configuration>
-          <soliditySourceFiles>
-            <directory>src/main/resources</directory>
-            <directory>src/main/resources/node_modules</directory>
-            <includes>
-              <include>**/*.sol</include>
-            </includes>
-          </soliditySourceFiles>
+            <packageName>com.yanchware.internships</packageName>
+            <sourceDestination>src/main/java/generated</sourceDestination>
+            <nativeJavaType>true</nativeJavaType>
+            <outputFormat>java,bin</outputFormat>
+            <!-- <outputJavaParentContractClassName>dpki.sol</outputJavaParentContractClassName> -->
+            <soliditySourceFiles>
+                <directory>src/main/resources</directory>
+                <directory>src/main/resources/node_modules</directory>
+                <includes>
+                    <include>**/*.sol</include>
+                </includes>
+            </soliditySourceFiles>
+            <abiSourceFiles>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>dpki.abi</include>
+                </includes>
+            </abiSourceFiles>
+            <outputDirectory>
+                <java>src/java/generated</java>
+                <bin>src/bin/generated</bin>
+                <abi>src/abi/generated</abi>
+            </outputDirectory>
+            <contract>
+        </contract>
         </configuration>
       </plugin>
-    </plugins>
+  </plugins>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
