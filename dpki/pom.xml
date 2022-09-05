@@ -19,6 +19,7 @@
   </properties>
 
   <dependencies>
+  
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>core</artifactId>
@@ -52,7 +53,7 @@
         <version>4.9.4</version>
         <configuration>
             <packageName>com.yanchware.internships</packageName>
-            <sourceDestination>src/main/java/generated</sourceDestination>
+            <sourceDestination>src/main/java/</sourceDestination>
             <nativeJavaType>true</nativeJavaType>
             <outputFormat>java,bin</outputFormat>
             <!-- <outputJavaParentContractClassName>dpki.sol</outputJavaParentContractClassName> -->
@@ -60,7 +61,7 @@
                 <directory>src/main/resources</directory>
                 <directory>src/main/resources/node_modules</directory>
                 <includes>
-                    <include>**/*.sol</include>
+                    <include>dpki.sol</include>
                 </includes>
             </soliditySourceFiles>
             <abiSourceFiles>
@@ -69,11 +70,11 @@
                     <include>dpki.abi</include>
                 </includes>
             </abiSourceFiles>
-            <outputDirectory>
+            <!-- <outputDirectory>
                 <java>src/java/generated</java>
                 <bin>src/bin/generated</bin>
                 <abi>src/abi/generated</abi>
-            </outputDirectory>
+            </outputDirectory> -->
             <contract>
         </contract>
         </configuration>

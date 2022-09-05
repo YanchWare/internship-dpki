@@ -40,7 +40,7 @@ public class client
 
     public EventValues getCsrByCommonName(Dpki contract, String commonName) throws Exception
     {
-        TransactionReceipt transactionReceipt = contract.getCertificateByCommonName(commonName).send();
+        final TransactionReceipt transactionReceipt = contract.getCertificateByCommonName(commonName).send();
 
         EventValues event = (EventValues) contract.getReturnCertificateByCommonNameEvents(transactionReceipt);
 
@@ -62,8 +62,10 @@ public class client
         {
             client client = new client();
             Dpki contract = null;
-
-            client.configLoad(contract, new File("home/alexf/Documenti/JKS/testClient.jks"));
+            
+            File file = new File("UTC--2022-09-02T11-41-44.574327638Z--183e7bfb82beb62acb4da5ea1e0fb1f369e6dd4e.json");
+            
+            client.configLoad(contract, file);
             
             EventValues event = client.getCsrByCommonName(contract, "serverexample.com");
 
