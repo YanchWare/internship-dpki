@@ -17,9 +17,11 @@ A certification request consists of three parts:
 If everything is correct, the trusted authority will sign the certification request and return an X.509 certificate. This certificate contains the public key of the entity, a serial number, a validity period, the signature algorithm, and other information. [[1](#references)]
 
 ## Certificate Revocation List (CRL):
-When a certificate expires or is revoked, the trusted authority will create a CRL. This CRL contains a list of revoked certificates, who made the revocation, and other information. It is signed with the private key of the trusted authority and it is freely available in a public repository. Each revoked certificate is identified in a CRL by its certificate serial number. 
+When a certificate is revoked, the trusted authority will move it into a CRL. This CRL contains a list of revoked certificates, who made the revocation, and other information. It is signed with the private key of the trusted authority and it is freely available in a public repository. Each revoked certificate is identified in a CRL by its certificate serial number. 
 When a certificate-using system uses a certificate (e.g., for verifying a remote user's digital signature), that system not only checks the certificate signature and validity but also acquires a suitably recent CRL and checks the certificate serial number is not on that CRL.
 A possible problem with this approach is that the CRL is not updated frequently. If a certificate is revoked, the CRL is updated, but the system may not be able to use the new CRL. [[2](#references)]
+There is a way to fix this problem. The solution is called **OCSP** (Online Certificate Status Protocol). Let's assume a scenario in which two entities want to communicate with each other *A* and *B*, they have public keys issued by a certain CA *X*. In case *A* is worried about the compromise of *B*'s private key, *A* can send an OCSP request to *A* . It will check the status of *B*'s keys and respond accordingly to *A*.
+On one hand, OCSP may be used to satisfy some of the operational requirements of providing more timely revocation information than is possible with CRLs. But on the other hand, OCSP can be vulnerable to *replay attacks*. To fix this, OCSP allows a nounce to be included in the request. [[3](#references)]
 
 ---
 
@@ -35,4 +37,6 @@ As regards CSR, it may not change compared to the centralized variant.
 [1] RFC 2986, PKCS #10: Certification Request Syntax Specification. Available at: https://datatracker.ietf.org/doc/html/rfc2986
 
 [2] RFC 5280, Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile. Available at: https://www.rfc-editor.org/rfc/rfc5280.html#section-3.3
+
+[3] RFC 2560, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. Available at: https://www.rfc-editor.org/rfc/rfc2560
 
